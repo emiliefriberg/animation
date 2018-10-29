@@ -75,8 +75,32 @@ body {
     height: 4vw;
     position: absolute;
     left: 25vw;
-    top: 30vw;
+    top: 0vw;
 }
+
+
+
+.cigaretpakke_fd {
+    animation-name: fd;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+
+}
+
+@keyframes fd {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(43.5vw);
+    }
+}
+
 
 #daase_graa {
     background-image: url("figurer/daase_graa.svg");
@@ -86,7 +110,17 @@ body {
     height: 5vw;
     position: absolute;
     left: 55vw;
-    top: 30vw;
+    top: 0vw;
+}
+
+.daase_graa_fd {
+    animation-name: fd;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+
 }
 
 #daase_orange {
@@ -97,8 +131,19 @@ body {
     height: 5vw;
     position: absolute;
     left: 32vw;
-    top: 10vw;
+    top: 0vw;
 }
+
+.daase_orange_fd {
+    animation-name: fd;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+
+}
+
 
 #kanin {
     background-image: url("figurer/kanin.svg");
@@ -108,7 +153,17 @@ body {
     height: 12vw;
     position: absolute;
     left: 50vw;
-    top: 5vw;
+    top: 0vw;
+}
+
+.kanin_fd {
+    animation-name: fd;
+    animation-duration: 1.7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+
 }
 
 #pindsvin {
@@ -119,7 +174,17 @@ body {
     height: 7vw;
     position: absolute;
     left: 25vw;
-    top: 15vw;
+    top: 0vw;
+}
+
+.pindsvin_fd {
+    animation-name: fd;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+
 }
 
 #plastik {
@@ -130,7 +195,17 @@ body {
     width: 7vw;
     height: 9vw;
     right: 20vw;
-    top: 20vw;
+    top: 0vw;
+}
+
+.plastik_fd {
+    animation-name: fd;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+
 }
 
 #plastikflaske {
@@ -141,8 +216,19 @@ body {
     width: 5vw;
     height: 8vw;
     left: 65vw;
-    top: 30vw;
+    top: 0vw;
 }
+
+.plastikflaske_fd {
+    animation-name: fd;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+
+}
+
 
 #plastikpose {
     background-image: url("figurer/plastikpose.svg");
