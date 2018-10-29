@@ -1,0 +1,381 @@
+/* screen */
+
+#menu_background {
+    background-image: url("titelskaerm.svg");
+    background-size: cover;
+    display:
+        width: 80vw;
+    height: 45vw;
+    overflow: hidden;
+}
+
+
+
+/* game */
+
+#game_background {
+    background-image: url("spil_skaerm.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display:
+        width: 80vw;
+    height: 45vw;
+}
+
+
+/* game elements */
+
+
+#egern_aabne_ojne {
+    background-image: url("figurer/egern_aabne_ojne.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 10vw;
+    height: 14vw;
+    position: absolute;
+    left: 1vw;
+    top: 2vw;
+}
+
+/* #egern_lukkede_ojne {
+   /* background-image: url("figurer/egern_lukkede_ojne.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 10vw;
+    height: 14vw;
+    position: absolute;
+    left: 1vw;
+    top: 2vw;
+}
+*/
+
+
+#cigaretpakke {
+    background-image: url("figurer/cigaretpakke.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    left: 25vw;
+    top: 70vw;
+}
+
+#daase_graa {
+    background-image: url("figurer/daase_graa.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 5vw;
+    height: 5vw;
+    position: absolute;
+    left: 55vw;
+    top: 60vw;
+}
+
+#daase_orange {
+    background-image: url("figurer/daase_orange.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 5vw;
+    height: 5vw;
+    position: absolute;
+    left: 32vw;
+    top: 50vw;
+}
+
+#kanin {
+    background-image: url("figurer/kanin.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 5vw;
+    height: 12vw;
+    position: absolute;
+    left: 45vw;
+    top: 51vw;
+}
+
+#pindsvin {
+    background-image: url("figurer/pindsvin.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 5vw;
+    height: 7vw;
+    position: absolute;
+    left: 25vw;
+    top: 55vw;
+}
+
+#plastik {
+    background-image: url("figurer/plastik.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 7vw;
+    height: 9vw;
+    position: absolute;
+    left: 35vw;
+    top: 60vw;
+}
+
+#plastikflaske {
+    background-image: url("figurer/plastikflaske.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 5vw;
+    height: 8vw;
+    position: absolute;
+    left: 65vw;
+    top: 47vw;
+}
+
+#plastikpose {
+    background-image: url("figurer/plastikpose.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 7vw;
+    height: 11vw;
+    position: absolute;
+    left: 47vw;
+    top: 70vw;
+}
+
+#solvpapir {
+    background-image: url("figurer/solvpapir.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    left: 37vw;
+    top: 70vw;
+}
+
+#ugle {
+    background-image: url("figurer/ugle.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 5vw;
+    height: 9vw;
+    position: absolute;
+    left: 65vw;
+    top: 65vw;
+}
+
+/* game ui */
+
+#points {
+    background-image: url("point/20_point.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 6vw;
+    height: 3vw;
+    position: absolute;
+    left: 77.2vw;
+    top: 66vw;
+}
+
+#life {
+    background-image: url("liv/3_liv.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    left: 77vw;
+    top: 75vw;
+}
+
+#time {
+    background-image: url("ur_hvidt.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 6vw;
+    height: 6vw;
+    position: absolute;
+    left: 75vw;
+    top: 55vw;
+}
+
+#viser {
+    background-image: url("ur_viser.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 1vw;
+    height: 3vw;
+    position: absolute;
+    left: 76.5vw;
+    top: 55vw;
+}
+
+#time {
+    background-image: url("ur_hvidt.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 6vw;
+    height: 6vw;
+    position: absolute;
+    left: 74vw;
+    top: 54vw;
+}
+
+
+#start {
+    background-image: url("start_spillet.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 15vw;
+    height: 15vw;
+    position: absolute;
+    left: 43vw;
+    top: 13vw;
+}
+
+#settings_icon {
+    background-image: url("indstillinger_icon.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    left: 76vw;
+    top: 46vw;
+}
+
+#settings {
+    background-image: url("indstillinger_skaerm.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+    width: 44vw;
+    height: 25vw;
+    position: absolute;
+    left: 22vw;
+    top: 52vw;
+}
+
+#settings_box1 {
+    background-image: url("indstillinger_box1.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    left: 28vw;
+    top: 62vw;
+}
+
+#settings_box2 {
+    background-image: url("indstillinger_box2.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    left: 28vw;
+    top: 67vw;
+}
+
+#settings_flueben1 {
+    background-image: url("flueben1.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    left: 28vw;
+    top: 62vw;
+}
+
+#settings_flueben2 {
+    background-image: url("flueben2.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    left: 28vw;
+    top: 67vw;
+}
+
+#settings_tilbage {
+    background-image: url("indstillinger_tilbage.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+    width: 6vw;
+    height: 4vw;
+    position: absolute;
+    left: 58vw;
+    top: 73vw;
+}
+
+
+#gameover {
+    background-image: url("sluskaerm_tabt.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+    width: 80vw;
+    height: 45vw;
+}
+
+#gameover_slut_spillet {
+    background-image: url("slut_spillet.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+    width: 10vw;
+    height: 11vw;
+    position: absolute;
+    left: 40vw;
+    top: 108vw;
+}
+
+#gameover_prov_igen {
+    background-image: url("prov_igen.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+    width: 10vw;
+    height: 11vw;
+    position: absolute;
+    left: 28vw;
+    top: 108vw;
+}
+
+
+#levelcomplete {
+    background-image: url("slutskaerm_vundet.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+    width: 80vw;
+    height: 45vw;
+}
+
+#levelcomplete_slut_spillet {
+    background-image: url("slut_spillet.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+    width: 10vw;
+    height: 11vw;
+    position: absolute;
+    left: 40vw;
+    top: 155vw;
+}
+
+#levelcomplete_prov_igen {
+    background-image: url("prov_igen.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: none;
+    width: 10vw;
+    height: 11vw;
+    position: absolute;
+    left: 28vw;
+    top: 155vw;
+}
