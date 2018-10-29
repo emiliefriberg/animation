@@ -354,7 +354,7 @@ body {
 
 .viser_rotate {
     animation-name: rotate;
-    animation-duration: 35s;
+    animation-duration: 45s;
     animation-iteration-count: 1;
     transform-origin: 59% 67%;
 }
