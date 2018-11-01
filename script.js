@@ -1,38 +1,42 @@
-function start() {
-    console.log("start");
+window.addEventListener("load", sidenVises);
+
+function sidenVises() {
+    console.log("sidenVises)");
+    //nulstil alting
+    showStart();
+}
+
+
+function showStart() {
+    console.log("showstart");
 
     //vis startskærm
-
     document.querySelector("#start").classList.add("show");
+
 
     //start animation på start-knap
     document.querySelector("#start_knap").classList.add("pulse");
 
+
+    //henter hideStart når der bliver klikket på knappen
+    document.querySelector("#start_knap").addEventListener("click", hideStart);
+
 }
-
-document.querySelector("#start").addEventListener("click", start);
-
-document.querySelector("#start_knap").addEventListener("click", start);
-
-
 
 
 function hideStart() {
     console.log("hideStart");
 
     //stop animation på start-knap
-
     document.querySelector("#start_knap").classList.add("hide");
 
     //fade startskærm ud
-
     document.querySelector("#start").classList.add("fade_out");
 
+    //henter startGame når animationen fade_out er færdig
+    document.querySelector("#start").addEventListener("animationend", startGame);
+
 }
-
-document.querySelector("#start_knap").addEventListener("click", hideStart);
-
-document.querySelector("#start").addEventListener("click", hideStart);
 
 
 
@@ -43,6 +47,7 @@ function startGame() {
     //skjul startskærm
 
     document.querySelector("#start").classList.add("hide");
+    document.querySelector("#start").classList.remove("show");
 
 
     //vis spilskærm
@@ -72,39 +77,32 @@ function startGame() {
 
     document.querySelector("#pindsvin").classList.add("falling");
 
-
+    document.querySelector("#plastik").addEventListener("click", clickSkrald);
+    document.querySelector("#daase_orange").addEventListener("click", clickSkrald);
 }
 
+function clickSkrald() {
+    console.log("clickSkrald");
+    //Pause falde-animation
+    //Start forsvind-animation på skraldet
+}
 
-document.querySelector("#start").addEventListener("click", startGame);
-
-document.querySelector("#game_background").addEventListener("click", startGame);
-
-
-document.querySelector("#egern_aabne_ojne").classList.add("fade_out");
-
-document.querySelector("#egern_lukkede_ojne").classList.add("fade_out");
-
-
-
-function skraldForsvind() {
+function skraldForsvinder() {
     console.log("skraldForsvinder");
-
 
     document.querySelector("#cigaretpakke").classList.add("dissappear");
 
-
-
+    document.querySelector("#cigaretpakke").addEventListener("click", skraldForsvinder);
 }
 
-document.querySelector("#cigaretpakke").addEventListener("click", skraldForsvind);
-
-function figurShake() {
-    console.log("figurShake");
-
-    document.querySelector("#kanin").classList.add("shake");
 
 
-}
 
-document.querySelector("#kanin").addEventListener("click", figurShake);
+
+
+
+
+
+//document.querySelector("#egern_aabne_ojne").classList.add("fade_out");
+//
+//document.querySelector("#egern_lukkede_ojne").classList.add("fade_out");
