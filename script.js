@@ -77,24 +77,85 @@ function startGame() {
 
     document.querySelector("#pindsvin").classList.add("falling");
 
+
+    //klik på skrald
+
     document.querySelector("#plastik").addEventListener("click", clickSkrald);
     document.querySelector("#daase_orange").addEventListener("click", clickSkrald);
+
+    //klik på dyr
+
+    document.querySelector("#kanin").addEventListener("click", clickDyr);
+    document.querySelector("#pindsvin").addEventListener("click", clickDyr);
+
 }
+
+
+//Når der klikkes på skrald
+
+
+
+let point = 0;
 
 function clickSkrald() {
     console.log("clickSkrald");
-    //Pause falde-animation
-    //Start forsvind-animation på skraldet
+
+
+    // TODO: giv point
+
+    point++;
+    console.log(point);
+
+    document.querySelector(".antal_point").textContent = point
+
 }
 
-function skraldForsvinder() {
-    console.log("skraldForsvinder");
 
-    document.querySelector("#cigaretpakke").classList.add("dissappear");
+//Når der klikkes på dyr
 
-    document.querySelector("#cigaretpakke").addEventListener("click", skraldForsvinder);
+let liv = 3;
+
+
+function clickDyr() {
+    console.log("clickDyr");
+
+    // TODO: mist et liv
+
+
+    document.querySelector(".antal_liv").textContent = liv
+    point--;
+    console.log(liv);
+
 }
 
+
+function skraldGone() {
+    console.log("skraldGone");
+
+    document.querySelector("#plastik").classList.add("paused");
+    document.querySelector("#plastik").classList.add("dissappear");
+
+}
+
+document.querySelector("#plastik").addEventListener("click", skraldGone);
+
+
+
+
+
+
+
+
+
+function dyrGone() {
+    console.log("dyrGone");
+
+    document.querySelector("#kanin").classList.add("paused");
+    document.querySelector("#kanin").classList.add("dissappear");
+
+}
+
+document.querySelector("#kanin").addEventListener("click", dyrGone);
 
 
 

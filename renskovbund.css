@@ -10,6 +10,11 @@ body {
     width: 100vw;
     height: 56.25vw;
 
+    /*  touch-action: none;*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
 }
 
 
@@ -40,6 +45,7 @@ body {
 
 
 
+/*
 #egern_aabne_ojne {
     background-image: url("figurer/egern_aabne_ojne.svg");
     background-repeat: no-repeat;
@@ -61,6 +67,7 @@ body {
     left: 1vw;
     top: 4vw;
 }
+*/
 
 
 
@@ -192,25 +199,28 @@ body {
 /* game ui */
 
 #points {
-    background-image: url("point/20_point.svg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    font-size: 2rem;
     position: absolute;
-    width: 6vw;
-    height: 3vw;
-    left: 95vw;
-    top: 26vw;
+    right: 1vw;
+    top: 24.5vw;
+}
+
+
+#points .antal_point {
+    font-family: 'Permanent Marker', cursive;
+}
+
+#life .antal_liv {
+    font-family: 'Permanent Marker', cursive;
 }
 
 #life {
-    background-image: url("liv/3_liv.svg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    font-size: 2rem;
     position: absolute;
-    width: 4vw;
-    height: 4vw;
-    right: 0.5vw;
-    bottom: 16vw;
+    right: 2vw;
+    bottom: 15.5vw;
 }
 
 #time {
@@ -456,7 +466,7 @@ body {
     }
 
     100% {
-        transform: scale(1);
+        transform: scale(1.1);
     }
 }
 
