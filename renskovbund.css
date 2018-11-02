@@ -81,6 +81,7 @@ body {
     position: absolute;
     right: 10vw;
     top: -9vw;
+    animation-delay: .9s;
 }
 
 
@@ -96,6 +97,7 @@ body {
     position: absolute;
     left: 55vw;
     top: -9vw;
+    animation-delay: .6s;
 }
 
 
@@ -108,6 +110,7 @@ body {
     position: absolute;
     left: 25vw;
     top: -9vw;
+    animation-delay: .2s;
 }
 
 
@@ -121,6 +124,7 @@ body {
     position: absolute;
     left: 47vw;
     top: -12vw;
+    animation-delay: .5s;
 }
 
 
@@ -133,6 +137,7 @@ body {
     position: absolute;
     left: 14vw;
     top: -9vw;
+    animation-delay: .10s;
 }
 
 
@@ -145,6 +150,7 @@ body {
     height: 9vw;
     left: 5vw;
     top: -9vw;
+    animation-delay: .4s;
 }
 
 
@@ -157,6 +163,7 @@ body {
     height: 8vw;
     left: 61vw;
     top: -9vw;
+    animation-delay: .6s;
 }
 
 
@@ -169,6 +176,7 @@ body {
     height: 11vw;
     left: 67vw;
     top: -9vw;
+    animation-delay: .9s;
 }
 
 
@@ -181,6 +189,7 @@ body {
     height: 4vw;
     left: 33vw;
     top: -9vw;
+    animation-delay: .5s;
 }
 
 
@@ -193,6 +202,7 @@ body {
     height: 9vw;
     left: 77vw;
     top: -9vw;
+    animation-delay: .2s;
 }
 
 
@@ -200,10 +210,10 @@ body {
 
 #points {
     background-repeat: no-repeat;
-    font-size: 2rem;
+    font-size: 1.5rem;
     position: absolute;
     right: 1vw;
-    top: 24.5vw;
+    top: 23vw;
 }
 
 
@@ -217,10 +227,10 @@ body {
 
 #life {
     background-repeat: no-repeat;
-    font-size: 2rem;
+    font-size: 1.5rem;
     position: absolute;
     right: 2vw;
-    bottom: 15.5vw;
+    bottom: 14vw;
 }
 
 #time {
@@ -350,7 +360,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    display: none;
+
     width: 80vw;
     height: 45vw;
 }
@@ -447,7 +457,7 @@ body {
 
 .falling {
     animation-name: falling;
-    animation-duration: 5s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 
@@ -455,6 +465,18 @@ body {
     top: -10vw;
 
 }
+
+.falling1 {
+    animation-name: falling;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    /* sikrer at vi altid er uden for skærmen, hvis animationen er delayet */
+    top: -10vw;
+
+}
+
 
 
 

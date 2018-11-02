@@ -1,5 +1,11 @@
 window.addEventListener("load", sidenVises);
 
+
+
+let point = 0;
+let life = 3;
+
+
 function sidenVises() {
     console.log("sidenVises)");
     //nulstil alting
@@ -95,23 +101,23 @@ function startGame() {
     //start falling
     document.querySelector("#cigaretpakke").classList.add("falling");
 
-    document.querySelector("#daase_graa").classList.add("falling");
+    document.querySelector("#daase_graa").classList.add("falling1");
 
     document.querySelector("#daase_orange").classList.add("falling");
 
-    document.querySelector("#plastik").classList.add("falling");
+    document.querySelector("#plastik").classList.add("falling1");
 
     document.querySelector("#plastikflaske").classList.add("falling");
 
-    document.querySelector("#plastikpose").classList.add("falling");
+    document.querySelector("#plastikpose").classList.add("falling1");
 
     document.querySelector("#solvpapir").classList.add("falling");
 
-    document.querySelector("#ugle").classList.add("falling");
+    document.querySelector("#ugle").classList.add("falling1");
 
     document.querySelector("#kanin").classList.add("falling");
 
-    document.querySelector("#pindsvin").classList.add("falling");
+    document.querySelector("#pindsvin").classList.add("falling1");
 
 
 
@@ -155,7 +161,7 @@ function startGame() {
 
 //Når der klikkes på skrald
 
-let point = 0;
+
 
 function clickSkrald() {
     console.log("clickSkrald");
@@ -186,8 +192,6 @@ function clickSkrald() {
 
 
 //Når der klikkes på dyr
-
-let life = 3;
 
 
 function clickDyr() {
@@ -286,8 +290,26 @@ function dyrGone() {
 
 }
 
+function gameStatus() {
+
+    if (life <= 0) {
+        gameOver();
+    }
+
+}
+
+function gameOver() {
+    console.log("gameOver");
+
+    document.querySelector("#gameover").classList.add("show");
 
 
+}
+
+
+function levelCompleted() {
+
+}
 
 
 
