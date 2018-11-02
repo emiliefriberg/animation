@@ -211,6 +211,8 @@ function clickDyr() {
 
     this.classList = "dyr dyr_pos" + myNumber;
 
+
+    gameStatus();
 }
 
 
@@ -302,6 +304,9 @@ function gameOver() {
     console.log("gameOver");
 
     document.querySelector("#gameover").classList.add("show");
+    document.querySelector("#gameover_prov_igen").classList.add("show");
+    document.querySelector("#gameover_slut_spillet").classList.add("show");
+
 
 
 }
