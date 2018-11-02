@@ -556,3 +556,57 @@ body {
 .paused {
     animation-play-state: paused;
 }
+
+
+
+
+
+.skrald_pos1 {
+    left: 20vw;
+    top: 28vw;
+}
+
+.skrald_pos2 {
+    left: 58vw;
+    top: 2vw;
+}
+
+.skrald_pos3 {
+    left: 4vw;
+    top: 8vw;
+}
+
+.skrald_pos4 {
+    left: 75vw;
+    top: 38vw;
+}
+
+.skrald_pos5 {
+    left: 40vw;
+    top: 35vw;
+}
+
+.skrald_pos6 {
+    left: 60vw;
+    top: 28vw;
+}
+
+.skrald_pos7 {
+    left: 40vw;
+    top: 18vw;
+}
+
+.dyr_pos1 {
+    left: 10vw;
+    top: 42vw;
+}
+
+.dyr_pos2 {
+    left: 18vw;
+    top: 5vw;
+}
+
+.dyr_pos3 {
+    left: 80vw;
+    top: 8vw;
+}
