@@ -1,6 +1,7 @@
 window.addEventListener("load", sidenVises);
 
-
+let showSettingsEffektSound = true;
+let showSettingsMusic = true;
 
 let point = 0;
 let life = 3;
@@ -10,6 +11,17 @@ function sidenVises() {
     console.log("sidenVises)");
     //nulstil alting
     showStart();
+
+    document.querySelector("#settings_icon").addEventListener("click", showSettings);
+
+    document.querySelector("#settings_tilbage").addEventListener("click", hideSettings);
+
+    document.querySelector("#gameover").classList.remove("show");
+
+    document.querySelector("#gameover_prov_igen").classList.remove("show");
+
+    document.querySelector("#gameover_slut_spillet").classList.remove("show");
+
 }
 
 
@@ -40,6 +52,7 @@ function showStart() {
 
     //henter hideStart når der bliver klikket på knappen
     document.querySelector("#start_knap").addEventListener("click", hideStart);
+
 
 }
 
@@ -83,7 +96,14 @@ function startGame() {
 
     //skjul startskærm
     document.querySelector("#start").classList.add("hide");
+
     document.querySelector("#start").classList.remove("show");
+
+    //hvis gameover og klikker prøv igen - fjern gameover skærm og ikoner
+    document.querySelector("#gameover").classList.remove("show");
+
+    document.querySelector("#gameover_prov_igen").classList.remove("show");
+    document.querySelector("#gameover_slut_spillet").classList.remove("show");
 
 
 
@@ -93,6 +113,11 @@ function startGame() {
     document.querySelector("#game_background").classList.add("show");
 
 
+
+    //settings
+    document.querySelector("#settings_icon").addEventListener("click", showSettings);
+
+    document.querySelector("#settings_tilbage").addEventListener("click", hideSettings);
 
 
 
@@ -105,7 +130,7 @@ function startGame() {
 
     document.querySelector("#daase_orange").classList.add("falling");
 
-    document.querySelector("#plastik").classList.add("falling1");
+    document.querySelector("#plastik").classList.add("falling");
 
     document.querySelector("#plastikflaske").classList.add("falling");
 
@@ -166,7 +191,9 @@ function startGame() {
 function clickSkrald() {
     console.log("clickSkrald");
 
+    document.querySelector("#yes").play();
 
+    document.querySelector("#yes").currentTime = 0;
     // TODO: giv point
 
     point++;
@@ -196,6 +223,9 @@ function clickSkrald() {
 
 function clickDyr() {
     console.log("clickDyr");
+
+    document.querySelector("#nej").play();
+    document.querySelector("#nej").currentTime = 0;
 
     // TODO: mist et liv
 
@@ -298,6 +328,14 @@ function gameStatus() {
         gameOver();
     }
 
+    //    if (point <= 15) {
+    //        gameOver();
+    //    } efter 40 sekunder
+
+    if (point >= 15) {
+        levelCompleted();
+    }
+
 }
 
 function gameOver() {
@@ -307,16 +345,75 @@ function gameOver() {
     document.querySelector("#gameover_prov_igen").classList.add("show");
     document.querySelector("#gameover_slut_spillet").classList.add("show");
 
+    document.querySelector("#gameover_prov_igen").addEventListener("click", startGame);
 
-
+    document.querySelector("#gameover_slut_spillet").addEventListener("click", sidenVises);
 }
 
 
 function levelCompleted() {
+    console.log("levelCompleted");
+
+    document.querySelector("#levelcomplete").classList.add("show");
+    document.querySelector("#levelcomplete_prov_igen").classList.add("show");
+    document.querySelector("#levelcomplete_slut_spillet").classList.add("show");
 
 }
 
 
+function showSettings() {
+    console.log("vis settings")
+
+    document.querySelector("#settings").classList.remove("hide");
+
+    document.querySelector("#settings_box1").classList.add("show");
+
+    document.querySelector("#settings_box2").classList.add("show");
+
+    document.querySelector("#settings_flueben1").classList.add("show");
+
+    document.querySelector("#settings_flueben2").classList.add("show");
+
+    document.querySelector("#settings_tilbage").classList.add("show");
+
+
+
+    // document.querySelector("#music").addEventListener("click", toggleMusic);
+    //
+    //    document.querySelector("#sfx").addEventListener("click", toggleSounds);
+
+}
+
+function hideSettings() {
+    console.log("fjern settings")
+
+    document.querySelector("#settings").classList.add("hide");
+
+    document.querySelector("#settings_box1").classList.remove("show");
+
+    document.querySelector("#settings_box2").classList.remove("show");
+
+    document.querySelector("#settings_flueben1").classList.remove("show");
+
+    document.querySelector("#settings_flueben2").classList.remove("show");
+
+    document.querySelector("#settings_tilbage").classList.remove("show");
+
+
+}
+
+
+
+//function toggleSounds() {
+//    console.log("Toggle sounds");
+//    if (showSettingsEffektSound == true) {
+//        showSettingsEffektSound = false
+//        soundsOff();
+//    } else {
+//
+//        showSettingsEffektSound = true;
+//        soundsOn();
+//    }
 
 
 

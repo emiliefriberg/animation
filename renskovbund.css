@@ -76,8 +76,8 @@ body {
     background-image: url("figurer/cigaretpakke.svg");
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 4vw;
-    height: 4vw;
+    width: 6vw;
+    height: 6vw;
     position: absolute;
     right: 10vw;
     top: -9vw;
@@ -92,8 +92,8 @@ body {
     background-image: url("figurer/daase_graa.svg");
     background-size: 100%;
     background-repeat: no-repeat;
-    width: 5vw;
-    height: 5vw;
+    width: 7vw;
+    height: 7vw;
     position: absolute;
     left: 55vw;
     top: -9vw;
@@ -105,8 +105,8 @@ body {
     background-image: url("figurer/daase_orange.svg");
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 5vw;
-    height: 5vw;
+    width: 7vw;
+    height: 7vw;
     position: absolute;
     left: 25vw;
     top: -9vw;
@@ -119,8 +119,8 @@ body {
     background-image: url("figurer/kanin.svg");
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 5vw;
-    height: 12vw;
+    width: 6vw;
+    height: 15vw;
     position: absolute;
     left: 47vw;
     top: -12vw;
@@ -132,8 +132,8 @@ body {
     background-image: url("figurer/pindsvin.svg");
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 5vw;
-    height: 7vw;
+    width: 7vw;
+    height: 9vw;
     position: absolute;
     left: 14vw;
     top: -9vw;
@@ -146,11 +146,11 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    width: 7vw;
+    width: 8vw;
     height: 9vw;
     left: 5vw;
     top: -9vw;
-    animation-delay: .4s;
+    animation-delay: .8s;
 }
 
 
@@ -159,8 +159,8 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    width: 5vw;
-    height: 8vw;
+    width: 8vw;
+    height: 13vw;
     left: 61vw;
     top: -9vw;
     animation-delay: .6s;
@@ -172,7 +172,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    width: 7vw;
+    width: 8vw;
     height: 11vw;
     left: 67vw;
     top: -9vw;
@@ -185,8 +185,8 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    width: 4vw;
-    height: 4vw;
+    width: 6vw;
+    height: 6vw;
     left: 33vw;
     top: -9vw;
     animation-delay: .5s;
@@ -198,8 +198,8 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    width: 5vw;
-    height: 9vw;
+    width: 6vw;
+    height: 10vw;
     left: 77vw;
     top: -9vw;
     animation-delay: .2s;
@@ -238,8 +238,8 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    width: 6vw;
-    height: 6vw;
+    width: 7vw;
+    height: 7vw;
     right: 0.5vw;
     top: 7vw;
 }
@@ -251,10 +251,10 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    width: 1vw;
+    width: 1.2vw;
     height: 3vw;
-    right: 3.1vw;
-    top: 8vw;
+    right: 3.4vw;
+    top: 8.2vw;
 }
 
 
@@ -287,11 +287,10 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    display: none;
     width: 44vw;
     height: 25vw;
-    left: 22vw;
-    top: 52vw;
+    left: 27vw;
+    top: 14vw;
 }
 
 #settings_box1 {
@@ -299,11 +298,10 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    display: none;
     width: 4vw;
     height: 4vw;
-    left: 28vw;
-    top: 62vw;
+    left: 35vw;
+    top: 24vw;
 }
 
 #settings_box2 {
@@ -311,11 +309,10 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    display: none;
     width: 4vw;
     height: 4vw;
-    left: 28vw;
-    top: 67vw;
+    left: 35vw;
+    top: 30vw;
 }
 
 #settings_flueben1 {
@@ -323,11 +320,10 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    display: none;
     width: 4vw;
     height: 4vw;
-    left: 28vw;
-    top: 62vw;
+    left: 35vw;
+    top: 24vw;
 }
 
 #settings_flueben2 {
@@ -335,11 +331,10 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    display: none;
     width: 4vw;
     height: 4vw;
-    left: 28vw;
-    top: 67vw;
+    left: 35vw;
+    top: 30vw;
 }
 
 #settings_tilbage {
@@ -347,11 +342,10 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    display: none;
     width: 6vw;
     height: 4vw;
-    left: 58vw;
-    top: 73vw;
+    left: 64vw;
+    top: 35vw;
 }
 
 
@@ -392,9 +386,8 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    display: none;
-    width: 80vw;
-    height: 45vw;
+    width: 100%;
+    height: 100%;
 }
 
 #levelcomplete_slut_spillet {
@@ -402,7 +395,6 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    display: none;
     width: 10vw;
     height: 11vw;
     left: 40vw;
@@ -414,7 +406,6 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    display: none;
     width: 10vw;
     height: 11vw;
     left: 28vw;
