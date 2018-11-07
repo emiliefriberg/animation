@@ -9,12 +9,18 @@ let life = 3;
 
 function sidenVises() {
     console.log("sidenVises)");
-    //nulstil alting
     showStart();
 
+
+    document.querySelector("#start").addEventListener("click", showStart);
     document.querySelector("#settings_icon").addEventListener("click", showSettings);
 
     document.querySelector("#settings_tilbage").addEventListener("click", hideSettings);
+
+    document.querySelector("#setting_effekt_sound").addEventListener("click", toggleSounds);
+
+    document.querySelector("#setting_music").addEventListener("click", toggleMusic);
+
 
     document.querySelector("#gameover").classList.remove("show");
 
@@ -28,11 +34,11 @@ function sidenVises() {
 
 
 
-
-
 function showStart() {
     console.log("showstart");
 
+
+    document.querySelector("#musik").play();
 
 
 
@@ -191,7 +197,8 @@ function startGame() {
 function clickSkrald() {
     console.log("clickSkrald");
 
-    document.querySelector("#yes").play();
+    document.querySelector("#papir").play();
+    document.querySelector("#papir").currentTime = 0;
 
     document.querySelector("#yes").currentTime = 0;
     // TODO: giv point
@@ -364,38 +371,116 @@ function levelCompleted() {
 function showSettings() {
     console.log("vis settings")
 
-    document.querySelector("#settings").classList.remove("hide");
-
-    document.querySelector("#settings_box1").classList.add("show");
-
-    document.querySelector("#settings_box2").classList.add("show");
-
-    document.querySelector("#settings_flueben1").classList.add("show");
-
-    document.querySelector("#settings_flueben2").classList.add("show");
+    document.querySelector("#settings").classList.toggle("hide");
 
     document.querySelector("#settings_tilbage").classList.add("show");
 
+}
 
 
-    // document.querySelector("#music").addEventListener("click", toggleMusic);
-    //
-    //    document.querySelector("#sfx").addEventListener("click", toggleSounds);
+function toggleSounds() {
+    console.log("togglesounds");
+
+    if (showSettingsEffektSound == false) {
+        showSettingsEffektSound = true;
+        document.querySelector("#effekter_sprite").classList.add("off_on");
+        document.querySelector("#effekter_sprite").classList.remove("on_off");
+        document.querySelector("#effekter_sprite").addEventListener('animationend', soundsOff);
+
+    } else {
+
+        showSettingsEffektSound = false;
+        document.querySelector("#effekter_sprite").classList.add("on_off");
+        document.querySelector("#effekter_sprite").classList.remove("off_on");
+        document.querySelector("#effekter_sprite").addEventListener('animationend', soundsOn);
+    }
+}
+
+
+
+function soundsOff() {
+    console.log("soundsOff function værdi er " + showSettingsEffektSound);
+
+    document.querySelector("#effekter_sprite").classList.remove("on_off")
+    document.querySelector("#effekter_sprite").classList.add("off")
+
+    //    her slukkes for effekter
+
+    document.querySelector("#papir").muted = true;
+    document.querySelector("#ov").muted = true;
+    document.querySelector("#nej").muted = true;
+
 
 }
+
+
+
+function soundsOn() {
+    console.log("soundsOn function værdi er " + showSettingsEffektSound);
+    document.querySelector("#effekter_sprite").classList.remove("off_on")
+    document.querySelector("#effekter_sprite").classList.add("on")
+
+
+
+    //    her tændes for effekter
+
+    document.querySelector("#nej").muted = false;
+    document.querySelector("#papir").muted = false;
+    document.querySelector("#ov").muted = false;
+}
+
+
+
+function toggleMusic() {
+    console.log("showSettingsMusic function " + showSettingsMusic);
+    //    showSettingsMusic = !showSettingsMusic;
+
+
+    if (showSettingsMusic == false) {
+        showSettingsMusic = true;
+        document.querySelector("#musik_sprite").classList.add("off_on");
+        document.querySelector("#musik_sprite").classList.remove("on_off");
+        document.querySelector("#musik_sprite").addEventListener('animationend', musicOff);
+
+    } else {
+
+        showSettingsMusic = false;
+        document.querySelector("#musik_sprite").classList.add("on_off");
+        document.querySelector("#musik_sprite").classList.remove("off_on");
+        document.querySelector("#musik_sprite").addEventListener('animationend', musicOn);
+    }
+
+}
+
+
+function musicOff() {
+    console.log("musicOff function værdi er " + showSettingsMusic);
+
+    document.querySelector("#musik_sprite").classList.remove("on_off")
+    document.querySelector("#musik_sprite").classList.add("off")
+
+    //    her slukkes for efx
+    document.querySelector("#musik").muted = true;
+}
+
+function musicOn() {
+    console.log("musicOn function værdi er " + showSettingsMusic);
+
+    document.querySelector("#musik_sprite").classList.remove("off_on")
+    document.querySelector("#musik_sprite").classList.add("on")
+
+    //    her tændes for efx
+    document.querySelector("#musik").muted = false;
+}
+
+
+
+
 
 function hideSettings() {
     console.log("fjern settings")
 
     document.querySelector("#settings").classList.add("hide");
-
-    document.querySelector("#settings_box1").classList.remove("show");
-
-    document.querySelector("#settings_box2").classList.remove("show");
-
-    document.querySelector("#settings_flueben1").classList.remove("show");
-
-    document.querySelector("#settings_flueben2").classList.remove("show");
 
     document.querySelector("#settings_tilbage").classList.remove("show");
 
@@ -403,17 +488,6 @@ function hideSettings() {
 }
 
 
-
-//function toggleSounds() {
-//    console.log("Toggle sounds");
-//    if (showSettingsEffektSound == true) {
-//        showSettingsEffektSound = false
-//        soundsOff();
-//    } else {
-//
-//        showSettingsEffektSound = true;
-//        soundsOn();
-//    }
 
 
 

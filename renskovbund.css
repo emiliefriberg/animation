@@ -80,7 +80,7 @@ body {
     height: 6vw;
     position: absolute;
     right: 10vw;
-    top: -9vw;
+    top: -10vw;
     animation-delay: .9s;
 }
 
@@ -89,14 +89,14 @@ body {
 
 
 #daase_graa {
-    background-image: url("figurer/daase_graa.svg");
+    background-image: url("daase_graa.svg");
     background-size: 100%;
     background-repeat: no-repeat;
     width: 7vw;
     height: 7vw;
     position: absolute;
     left: 55vw;
-    top: -9vw;
+    top: -10vw;
     animation-delay: .6s;
 }
 
@@ -109,7 +109,7 @@ body {
     height: 7vw;
     position: absolute;
     left: 25vw;
-    top: -9vw;
+    top: -10vw;
     animation-delay: .2s;
 }
 
@@ -123,7 +123,7 @@ body {
     height: 15vw;
     position: absolute;
     left: 47vw;
-    top: -12vw;
+    top: -13vw;
     animation-delay: .5s;
 }
 
@@ -136,7 +136,7 @@ body {
     height: 9vw;
     position: absolute;
     left: 14vw;
-    top: -9vw;
+    top: -10vw;
     animation-delay: .10s;
 }
 
@@ -149,7 +149,7 @@ body {
     width: 8vw;
     height: 9vw;
     left: 5vw;
-    top: -9vw;
+    top: -10vw;
     animation-delay: .8s;
 }
 
@@ -162,7 +162,7 @@ body {
     width: 8vw;
     height: 13vw;
     left: 61vw;
-    top: -9vw;
+    top: -15vw;
     animation-delay: .6s;
 }
 
@@ -175,7 +175,7 @@ body {
     width: 8vw;
     height: 11vw;
     left: 67vw;
-    top: -9vw;
+    top: -10vw;
     animation-delay: .9s;
 }
 
@@ -188,7 +188,7 @@ body {
     width: 6vw;
     height: 6vw;
     left: 33vw;
-    top: -9vw;
+    top: -10vw;
     animation-delay: .5s;
 }
 
@@ -201,9 +201,10 @@ body {
     width: 6vw;
     height: 10vw;
     left: 77vw;
-    top: -9vw;
+    top: -10vw;
     animation-delay: .2s;
 }
+
 
 
 /* game ui */
@@ -261,14 +262,14 @@ body {
 
 
 #start_knap {
-    background-image: url("startknap.svg");
+    background-image: url("start_knap.svg");
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    width: 15vw;
+    width: 12vw;
     height: 15vw;
-    left: 43vw;
-    top: 13vw;
+    left: 45vw;
+    top: 18vw;
 }
 
 #settings_icon {
@@ -283,59 +284,20 @@ body {
 }
 
 #settings {
-    background-image: url("indstillinger_skaerm.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
+    /*    margin: 0 auto;*/
+    text-align: center;
     position: absolute;
-    width: 44vw;
-    height: 25vw;
-    left: 27vw;
-    top: 14vw;
+    width: 60vw;
+    height: 45vw;
+    background-color: rgba(0, 0, 0, 0.82);
+
+    top: 5vw;
+    left: 20vw;
+    border-radius: 2vw;
+    color: white;
 }
 
-#settings_box1 {
-    background-image: url("indstillinger_box1.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: absolute;
-    width: 4vw;
-    height: 4vw;
-    left: 35vw;
-    top: 24vw;
-}
 
-#settings_box2 {
-    background-image: url("indstillinger_box2.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: absolute;
-    width: 4vw;
-    height: 4vw;
-    left: 35vw;
-    top: 30vw;
-}
-
-#settings_flueben1 {
-    background-image: url("flueben1.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: absolute;
-    width: 4vw;
-    height: 4vw;
-    left: 35vw;
-    top: 24vw;
-}
-
-#settings_flueben2 {
-    background-image: url("flueben2.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: absolute;
-    width: 4vw;
-    height: 4vw;
-    left: 35vw;
-    top: 30vw;
-}
 
 #settings_tilbage {
     background-image: url("indstillinger_tilbage.svg");
@@ -344,9 +306,71 @@ body {
     position: absolute;
     width: 6vw;
     height: 4vw;
-    left: 64vw;
-    top: 35vw;
+    left: 72vw;
+    top: 45vw;
+    z-index: 1
 }
+
+
+
+
+
+/*toggle*/
+
+
+#effekter_sprite,
+#musik_sprite {
+    background-size: 500% 100%;
+    width: 10vw;
+    height: 10vw;
+    background-image: url(Toggle_sprite.svg);
+    display: inline-block;
+}
+
+
+#settings h1 {
+    display: inline-block;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 100;
+}
+
+.on {
+    background-position: 0;
+}
+
+.off {
+    background-position: -400% 0;
+}
+
+
+.off_on {
+    animation-name: on_off_kf;
+    animation-direction: reverse;
+    animation-duration: 0.1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-timing-function: steps(4)
+}
+
+.on_off {
+    animation-name: on_off_kf;
+    animation-duration: 0.1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-timing-function: steps(4)
+}
+
+@keyframes on_off_kf {
+
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -400% 0;
+    }
+}
+
 
 
 #gameover {
@@ -560,12 +584,21 @@ body {
 
 
 
-
 /*Paused*/
 
 .paused {
     animation-play-state: paused;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
