@@ -3,16 +3,21 @@ window.addEventListener("load", sidenVises);
 let showSettingsEffektSound = true;
 let showSettingsMusic = true;
 
+let timeLeft = 20;
 let point = 0;
 let life = 3;
 
 
+
 function sidenVises() {
     console.log("sidenVises)");
+
     showStart();
 
-
+    //Musik
     document.querySelector("#start").addEventListener("click", showStart);
+
+
     document.querySelector("#settings_icon").addEventListener("click", showSettings);
 
     document.querySelector("#settings_tilbage").addEventListener("click", hideSettings);
@@ -22,46 +27,34 @@ function sidenVises() {
     document.querySelector("#setting_music").addEventListener("click", toggleMusic);
 
 
-    document.querySelector("#gameover").classList.remove("show");
 
+
+    //    fjern gameover skærm, når der klikkes stop spillet
+    document.querySelector("#gameover").classList.remove("show");
     document.querySelector("#gameover_prov_igen").classList.remove("show");
 
-    document.querySelector("#gameover_slut_spillet").classList.remove("show");
 
+    //    fjern levelcomplete skærm, når der klikkes på stop spillet
+    document.querySelector("#levelcomplete").classList.remove("show");
+    document.querySelector("#levelcomplete_prov_igen").classList.remove("show");
 }
 
 
+//Egern sprite
+document.querySelector("#egern_sprite").classList.add("blink");
 
 
 
+//Titelskærm
 function showStart() {
     console.log("showstart");
-
-
     document.querySelector("#musik").play();
-
-
-
-    //vis startskærm
     document.querySelector("#start").classList.add("show");
-
-
-
-
-    //start animation på start-knap
     document.querySelector("#start_knap").classList.add("pulse");
-
-
-
-
-
-
-    //henter hideStart når der bliver klikket på knappen
+    document.querySelector("#settings_icon ").classList.add("rotate");
     document.querySelector("#start_knap").addEventListener("click", hideStart);
 
-
 }
-
 
 
 
@@ -70,22 +63,8 @@ function showStart() {
 function hideStart() {
     console.log("hideStart");
 
-
-
-
-    //stop animation på start-knap
     document.querySelector("#start_knap").classList.add("hide");
-
-
-
-
-    //fade startskærm ud
     document.querySelector("#start").classList.add("fade_out");
-
-
-
-
-    //henter startGame når animationen fade_out er færdig
     document.querySelector("#start").addEventListener("animationend", startGame);
 
 }
@@ -93,96 +72,92 @@ function hideStart() {
 
 
 
+
+
+
+
+//Spillet starter
 function startGame() {
     console.log("startGame");
 
-
-
-
-
-    //skjul startskærm
-    document.querySelector("#start").classList.add("hide");
+    document.querySelector("#start").classList.add("start");
+    tidenGaar();
 
     document.querySelector("#start").classList.remove("show");
+    document.querySelector("#start").classList.remove("show");
+
+
+    //nulstil point og liv
+    point = 0;
+    life = 3;
+
+    document.querySelector(".antal_point").innerHTML = point;
+
+
 
     //hvis gameover og klikker prøv igen - fjern gameover skærm og ikoner
     document.querySelector("#gameover").classList.remove("show");
-
     document.querySelector("#gameover_prov_igen").classList.remove("show");
-    document.querySelector("#gameover_slut_spillet").classList.remove("show");
-
-
-
-
-
-    //vis spilskærm
-    document.querySelector("#game_background").classList.add("show");
-
 
 
     //settings
     document.querySelector("#settings_icon").addEventListener("click", showSettings);
-
     document.querySelector("#settings_tilbage").addEventListener("click", hideSettings);
 
 
 
 
 
-    //start falling
+    //Skraldet falder
     document.querySelector("#cigaretpakke").classList.add("falling");
-
     document.querySelector("#daase_graa").classList.add("falling1");
-
     document.querySelector("#daase_orange").classList.add("falling");
-
     document.querySelector("#plastik").classList.add("falling");
-
     document.querySelector("#plastikflaske").classList.add("falling");
-
     document.querySelector("#plastikpose").classList.add("falling1");
-
     document.querySelector("#solvpapir").classList.add("falling");
-
     document.querySelector("#ugle").classList.add("falling1");
-
     document.querySelector("#kanin").classList.add("falling");
-
     document.querySelector("#pindsvin").classList.add("falling1");
 
 
 
-
-
-
-
-
-    //klik på skrald
-
+    //Når der klikkes på skrald
     document.querySelector("#cigaretpakke").addEventListener("click", clickSkrald)
     document.querySelector("#daase_graa").addEventListener("click", clickSkrald)
     document.querySelector("#daase_orange").addEventListener("click", clickSkrald);
-
     document.querySelector("#plastik").addEventListener("click", clickSkrald);
     document.querySelector("#plastikflaske").addEventListener("click", clickSkrald);
     document.querySelector("#plastikpose").addEventListener("click", clickSkrald);
-
     document.querySelector("#solvpapir").addEventListener("click", clickSkrald);
 
 
 
 
-
-
-
-
-
-    //klik på dyr
+    //Når der klikkes på dyrene
     document.querySelector("#kanin").addEventListener("click", clickDyr);
     document.querySelector("#pindsvin").addEventListener("click", clickDyr);
-
     document.querySelector("#ugle").addEventListener("click", clickDyr);
 
+
+}
+
+function tidenGaar() {
+    console.log("funktionen tidenGaar");
+
+    timeLeft--;
+
+
+    if (timeLeft > 0) {
+        setTimeout(tidenGaar, 1000)
+    } else {
+        gameOver();
+    }
+
+
+
+    console.log(timeLeft);
+    document.querySelector("#tid").textContent = timeLeft;
 }
 
 
@@ -206,21 +181,38 @@ function clickSkrald() {
     point++;
     console.log(point);
 
-    document.querySelector(".antal_point").textContent = point;
+    document.querySelector(".antal_point").innerHTML = point;
 
 
     console.log(this);
 
-    let myNumber = Math.floor((Math.random() * 5) + 1);
+    let myNumber = Math.floor((Math.random() * 10) + 1);
     console.log("tilfældigt tal: " + myNumber);
 
 
-    this.classList = "skrald skrald_pos" + myNumber;
+    //    this.classList = "skrald falling skrald_pos" + myNumber;
+
+    this.classList.add("dissappear");
+
+    this.addEventListener("animationend", nySkrald);
+
+    gameStatus();
 
 }
 
 
+function nySkrald() {
 
+    console.log(this.classList);
+
+    let myNumber = Math.floor((Math.random() * 10) + 1);
+    console.log("tilfældigt tal: " + myNumber);
+
+    this.classList = "skrald falling skrald_pos" + myNumber;
+
+    this.classList.remove("dissappear");
+
+}
 
 
 
@@ -240,17 +232,35 @@ function clickDyr() {
     console.log(life);
     document.querySelector(".antal_liv").textContent = life;
 
-    console.log(this);
+    //    console.log(this);
 
-    let myNumber = Math.floor((Math.random() * 5) + 1);
+    let myNumber = Math.floor((Math.random() * 10) + 1);
     console.log("tilfældigt tal: " + myNumber);
 
 
-    this.classList = "dyr dyr_pos" + myNumber;
+    //    this.classList = "dyr falling dyr_pos" + myNumber;
+
+    this.classList.add("dissappear");
+
+    this.addEventListener("animationend", nySkrald);
 
 
     gameStatus();
 }
+
+function nytDyr() {
+
+    console.log(this.classList);
+
+    let myNumber = Math.floor((Math.random() * 10) + 1);
+    console.log("tilfældigt tal: " + myNumber);
+
+    this.classList = "dyr falling dyr_pos" + myNumber;
+
+    this.classList.remove("dissappear");
+
+}
+
 
 
 
@@ -268,7 +278,6 @@ function skraldGone() {
     document.querySelector("#cigaretpakke").classList.add("dissappear");
 
     document.querySelector("#daase_graa").classList.add("dissappear");
-
     document.querySelector("#daase_orange").classList.add("dissappear");
 
     document.querySelector("#plastik").classList.add("dissappear");
@@ -278,11 +287,6 @@ function skraldGone() {
     document.querySelector("#plastikpose").classList.add("dissappear");
 
     document.querySelector("#solvpapir").classList.add("dissappear");
-
-
-
-
-
 
 
 
@@ -337,24 +341,42 @@ function gameStatus() {
 
     //    if (point <= 15) {
     //        gameOver();
-    //    } efter 40 sekunder
+    //        //    } efter 30 sekunder
 
     if (point >= 15) {
         levelCompleted();
     }
-
 }
+
+
+//let harHaftGameOver = false;
+//
+//function endGame() {
+//    console.log("endGame")
+//
+//    if (HarHaftGameOver == true) {}
+//
+//    if (point >= 15) {
+//        levelCompleted();
+//    } else {
+//        gameOver();
+//    }
+//}
+
+
+
+
+
 
 function gameOver() {
     console.log("gameOver");
 
     document.querySelector("#gameover").classList.add("show");
+
     document.querySelector("#gameover_prov_igen").classList.add("show");
-    document.querySelector("#gameover_slut_spillet").classList.add("show");
 
-    document.querySelector("#gameover_prov_igen").addEventListener("click", startGame);
+    document.querySelector("#gameover_prov_igen").addEventListener("click", reset);
 
-    document.querySelector("#gameover_slut_spillet").addEventListener("click", sidenVises);
 }
 
 
@@ -362,10 +384,28 @@ function levelCompleted() {
     console.log("levelCompleted");
 
     document.querySelector("#levelcomplete").classList.add("show");
+
     document.querySelector("#levelcomplete_prov_igen").classList.add("show");
-    document.querySelector("#levelcomplete_slut_spillet").classList.add("show");
+
+    document.querySelector("#levelcomplete_prov_igen").addEventListener("click", reset);
+
 
 }
+
+
+
+function reset() {
+
+    document.querySelector("#levelcomplete").classList.add("hide");
+    document.querySelector("#gameover").classList.add("hide");
+    //        point = 0;
+    //        life = 3;
+    //        timeLeft = 20;
+    location.reload();
+
+
+}
+
 
 
 function showSettings() {
@@ -375,25 +415,29 @@ function showSettings() {
 
     document.querySelector("#settings_tilbage").classList.add("show");
 
+
 }
 
 
 function toggleSounds() {
-    console.log("togglesounds");
+    console.log("showSettingsEffektSound function " + showSettingsEffektSound);
+    //jeg tænder for effekter
 
     if (showSettingsEffektSound == false) {
+        console.log("jeg tænder for effekter")
         showSettingsEffektSound = true;
         document.querySelector("#effekter_sprite").classList.add("off_on");
-        document.querySelector("#effekter_sprite").classList.remove("on_off");
-        document.querySelector("#effekter_sprite").addEventListener('animationend', soundsOff);
+        document.querySelector("#effekter_sprite").classList.remove("off");
+        document.querySelector("#effekter_sprite").addEventListener('animationend', soundsOn);
 
     } else {
-
+        console.log("jeg slukker for effekter")
         showSettingsEffektSound = false;
         document.querySelector("#effekter_sprite").classList.add("on_off");
-        document.querySelector("#effekter_sprite").classList.remove("off_on");
-        document.querySelector("#effekter_sprite").addEventListener('animationend', soundsOn);
+        document.querySelector("#effekter_sprite").classList.remove("on");
+        document.querySelector("#effekter_sprite").addEventListener('animationend', soundsOff);
     }
+
 }
 
 
@@ -430,28 +474,31 @@ function soundsOn() {
 }
 
 
-
 function toggleMusic() {
     console.log("showSettingsMusic function " + showSettingsMusic);
     //    showSettingsMusic = !showSettingsMusic;
 
 
     if (showSettingsMusic == false) {
+        console.log("jeg tænder for musikken")
+
+        //jeg tænder for musikken
         showSettingsMusic = true;
         document.querySelector("#musik_sprite").classList.add("off_on");
-        document.querySelector("#musik_sprite").classList.remove("on_off");
-        document.querySelector("#musik_sprite").addEventListener('animationend', musicOff);
+        document.querySelector("#musik_sprite").classList.remove("off");
+        document.querySelector("#musik_sprite").addEventListener('animationend', musicOn);
 
     } else {
+        console.log("jeg slukker for musikken")
+        //jeg slukker for musikken
 
         showSettingsMusic = false;
         document.querySelector("#musik_sprite").classList.add("on_off");
-        document.querySelector("#musik_sprite").classList.remove("off_on");
-        document.querySelector("#musik_sprite").addEventListener('animationend', musicOn);
+        document.querySelector("#musik_sprite").classList.remove("on");
+        document.querySelector("#musik_sprite").addEventListener('animationend', musicOff);
     }
 
 }
-
 
 function musicOff() {
     console.log("musicOff function værdi er " + showSettingsMusic);
@@ -472,6 +519,8 @@ function musicOn() {
     //    her tændes for efx
     document.querySelector("#musik").muted = false;
 }
+
+
 
 
 

@@ -45,30 +45,46 @@ body {
 
 
 
-/*
-#egern_aabne_ojne {
-    background-image: url("figurer/egern_aabne_ojne.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 10vw;
-    height: 14vw;
-    position: absolute;
+#egern_sprite {
+    background-image: url("egern_sprite.svg");
     left: 1vw;
-    top: 4vw;
+    top: 1vw;
+    background-size: 500% 100%;
+    width: 20vw;
+    height: 20vw;
+    display: inline-block;
 }
 
-#egern_lukkede_ojne {
-    background-image: url("figurer/egern_lukkede_ojne.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 10vw;
-    height: 14vw;
-    position: absolute;
-    left: 1vw;
-    top: 4vw;
+
+.blink {
+    animation-name: blink;
+    animation-direction: reverse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: steps(4)
+}
+
+/*
+.blink_reverse {
+    animation-name: on_off_kf;
+    animation-duration: 0.1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-timing-function: steps(4)
 }
 */
 
+@keyframes blink {
+
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -400% 0;
+    }
+}
 
 
 
@@ -79,8 +95,6 @@ body {
     width: 6vw;
     height: 6vw;
     position: absolute;
-    right: 10vw;
-    top: -10vw;
     animation-delay: .9s;
 }
 
@@ -95,8 +109,6 @@ body {
     width: 7vw;
     height: 7vw;
     position: absolute;
-    left: 55vw;
-    top: -10vw;
     animation-delay: .6s;
 }
 
@@ -108,8 +120,6 @@ body {
     width: 7vw;
     height: 7vw;
     position: absolute;
-    left: 25vw;
-    top: -10vw;
     animation-delay: .2s;
 }
 
@@ -122,8 +132,6 @@ body {
     width: 6vw;
     height: 15vw;
     position: absolute;
-    left: 47vw;
-    top: -13vw;
     animation-delay: .5s;
 }
 
@@ -135,8 +143,6 @@ body {
     width: 7vw;
     height: 9vw;
     position: absolute;
-    left: 14vw;
-    top: -10vw;
     animation-delay: .10s;
 }
 
@@ -148,8 +154,6 @@ body {
     position: absolute;
     width: 8vw;
     height: 9vw;
-    left: 5vw;
-    top: -10vw;
     animation-delay: .8s;
 }
 
@@ -161,8 +165,6 @@ body {
     position: absolute;
     width: 8vw;
     height: 13vw;
-    left: 61vw;
-    top: -15vw;
     animation-delay: .6s;
 }
 
@@ -174,8 +176,6 @@ body {
     position: absolute;
     width: 8vw;
     height: 11vw;
-    left: 67vw;
-    top: -10vw;
     animation-delay: .9s;
 }
 
@@ -187,8 +187,6 @@ body {
     position: absolute;
     width: 6vw;
     height: 6vw;
-    left: 33vw;
-    top: -10vw;
     animation-delay: .5s;
 }
 
@@ -200,8 +198,6 @@ body {
     position: absolute;
     width: 6vw;
     height: 10vw;
-    left: 77vw;
-    top: -10vw;
     animation-delay: .2s;
 }
 
@@ -209,15 +205,7 @@ body {
 
 /* game ui */
 
-#points {
-    background-repeat: no-repeat;
-    font-size: 1.5rem;
-    position: absolute;
-    right: 1vw;
-    top: 23vw;
-}
-
-
+/*
 #points .antal_point {
     font-family: 'Permanent Marker', cursive;
 }
@@ -225,40 +213,32 @@ body {
 #life .antal_liv {
     font-family: 'Permanent Marker', cursive;
 }
+*/
 
 #life {
     background-repeat: no-repeat;
     font-size: 1.5rem;
     position: absolute;
     right: 2vw;
-    bottom: 14vw;
+    bottom: 17vw;
 }
 
-#time {
-    background-image: url("ur_hvidt.svg");
+
+#points {
     background-repeat: no-repeat;
-    background-size: 100%;
+    font-size: 1.5rem;
     position: absolute;
-    width: 7vw;
-    height: 7vw;
-    right: 0.5vw;
-    top: 7vw;
+    right: 1vw;
+    top: 24vw;
 }
 
 
-
-#viser {
-    background-image: url("ur_viser.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
+#tid {
+    font-size: 1.5rem;
     position: absolute;
-    width: 1.2vw;
-    height: 3vw;
-    right: 3.4vw;
-    top: 8.2vw;
+    right: 2vw;
+    top: 11vw;
 }
-
-
 
 
 #start_knap {
@@ -273,12 +253,12 @@ body {
 }
 
 #settings_icon {
-    background-image: url("indstillinger_icon.svg");
+    background-image: url("setting_ikon.svg");
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    width: 4vw;
-    height: 4vw;
+    width: 5vw;
+    height: 5vw;
     right: 1vw;
     top: 0.5vw;
 }
@@ -346,7 +326,7 @@ body {
 .off_on {
     animation-name: on_off_kf;
     animation-direction: reverse;
-    animation-duration: 0.1s;
+    animation-duration: 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: both;
     animation-timing-function: steps(4)
@@ -354,7 +334,7 @@ body {
 
 .on_off {
     animation-name: on_off_kf;
-    animation-duration: 0.1s;
+    animation-duration: 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: both;
     animation-timing-function: steps(4)
@@ -382,26 +362,16 @@ body {
     height: 100%;
 }
 
-#gameover_slut_spillet {
-    background-image: url("slut_spillet.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: absolute;
-    width: 10vw;
-    height: 11vw;
-    left: 50vw;
-    top: 23vw;
-}
 
 #gameover_prov_igen {
     background-image: url("prov_igen.svg");
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    width: 10vw;
-    height: 11vw;
-    left: 35vw;
-    top: 23vw;
+    width: 30vw;
+    height: 9vw;
+    left: 30vw;
+    top: 25vw;
 }
 
 
@@ -414,26 +384,16 @@ body {
     height: 100%;
 }
 
-#levelcomplete_slut_spillet {
-    background-image: url("slut_spillet.svg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: absolute;
-    width: 10vw;
-    height: 11vw;
-    left: 40vw;
-    top: 155vw;
-}
 
 #levelcomplete_prov_igen {
     background-image: url("prov_igen.svg");
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    width: 10vw;
-    height: 11vw;
-    left: 28vw;
-    top: 155vw;
+    width: 30vw;
+    height: 9vw;
+    left: 30vw;
+    top: 25vw;
 }
 
 
@@ -474,7 +434,7 @@ body {
     animation-timing-function: linear;
 
     /* sikrer at vi altid er uden for skærmen, hvis animationen er delayet */
-    top: -10vw;
+    top: -15vw;
 
 }
 
@@ -530,11 +490,9 @@ body {
 
 .rotate {
     animation-name: rotate;
-    animation-duration: 45s;
-    animation-iteration-count: 1;
-    transform-origin: 59% 67%;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
 }
-
 
 
 
@@ -596,60 +554,42 @@ body {
 
 
 
-
-
-
-
-
-
-
-
 .skrald_pos1 {
     left: 20vw;
-    top: 28vw;
 }
 
 .skrald_pos2 {
     left: 58vw;
-    top: 2vw;
 }
 
 .skrald_pos3 {
     left: 4vw;
-    top: 8vw;
 }
 
 .skrald_pos4 {
     left: 75vw;
-    top: 38vw;
 }
 
 .skrald_pos5 {
     left: 40vw;
-    top: 35vw;
 }
 
 .skrald_pos6 {
     left: 60vw;
-    top: 28vw;
 }
 
 .skrald_pos7 {
     left: 40vw;
-    top: 18vw;
 }
 
 .dyr_pos1 {
     left: 10vw;
-    top: 42vw;
 }
 
 .dyr_pos2 {
     left: 18vw;
-    top: 5vw;
 }
 
 .dyr_pos3 {
     left: 80vw;
-    top: 8vw;
 }
